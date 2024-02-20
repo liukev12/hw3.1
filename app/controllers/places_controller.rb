@@ -8,12 +8,12 @@ class PlacesController < ApplicationController
   # Finds a specific place by id and its related entries for the show view
   def show
     @place = Place.find_by({"id" => params["id"]})
-    @entries = Entry.where(P"place_id" => params["id"]})
+    @entries = Entry.where(place_id: params["id"])
   end
 
   # Prepares a new place instance for the new view
   def new
-    @place = Place.find_by({"id" => params["place_id"]})
+    @place = Place.find_by(id: params["place_id"])
   end
 
   # Creates a new Place record with the name from form parameters, saves it, and redirects to the places list
