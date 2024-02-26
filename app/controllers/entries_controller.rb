@@ -7,8 +7,9 @@ class EntriesController < ApplicationController
   end
 
   def create
-
+    # Create new entries 
     @entry = Entry.new
+    # Input all data into the table 
     @entry["title"] = params["title"]
     @entry["description"] = params["description"]
     @entry["posted_on"] = params["posted_on"]
