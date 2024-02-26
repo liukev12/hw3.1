@@ -9,10 +9,11 @@ class EntriesController < ApplicationController
   def create
 
     @entry = Entry.new
-    @entry["title"] = params["name"]
-    @enrty["description"] = params["description"]
-    @enrty["posted_on"] = params["posted_on"]
-    @enrty["place_id"] = params["place_id"]
+    @entry["title"] = params["title"]
+    @entry["description"] = params["description"]
+    @entry["posted_on"] = params["posted_on"]
+    @entry["place_id"] = params["place_id"]
+   
     # save place
     @entry.save
     # redirect user
